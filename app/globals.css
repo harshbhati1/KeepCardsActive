@@ -5,9 +5,109 @@
 @layer base {
   html {
     font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
   body {
     background: #0f172a;
     color: #ffffff;
+  }
+}
+
+@layer utilities {
+  /* Beautiful floating animation for orbs */
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px) scale(1);
+      opacity: 0.6;
+    }
+    25% { 
+      transform: translateY(-15px) translateX(10px) scale(1.05);
+      opacity: 0.8;
+    }
+    50% { 
+      transform: translateY(-25px) translateX(-5px) scale(1.1);
+      opacity: 1;
+    }
+    75% { 
+      transform: translateY(-10px) translateX(-15px) scale(1.05);
+      opacity: 0.8;
+    }
+  }
+
+  /* Twinkling stars animation */
+  @keyframes twinkle {
+    0%, 100% { 
+      opacity: 0.3;
+      transform: scale(1) rotate(0deg);
+    }
+    25% { 
+      opacity: 0.8;
+      transform: scale(1.2) rotate(90deg);
+    }
+    50% { 
+      opacity: 1;
+      transform: scale(1.5) rotate(180deg);
+    }
+    75% { 
+      opacity: 0.6;
+      transform: scale(1.1) rotate(270deg);
+    }
+  }
+
+  /* Sparkle particles animation */
+  @keyframes sparkle {
+    0%, 100% { 
+      opacity: 0.2;
+      transform: scale(0.8) translateY(0px);
+    }
+    20% { 
+      opacity: 0.8;
+      transform: scale(1.3) translateY(-5px);
+    }
+    40% { 
+      opacity: 1;
+      transform: scale(1.6) translateY(-10px);
+    }
+    60% { 
+      opacity: 0.9;
+      transform: scale(1.4) translateY(-7px);
+    }
+    80% { 
+      opacity: 0.5;
+      transform: scale(1.1) translateY(-3px);
+    }
+  }
+
+  /* Slow floating particles */
+  @keyframes float-slow {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.2;
+    }
+    33% { 
+      transform: translateY(-30px) translateX(20px);
+      opacity: 0.6;
+    }
+    66% { 
+      transform: translateY(-15px) translateX(-25px);
+      opacity: 0.4;
+    }
+  }
+
+  /* Apply animations */
+  .animate-float {
+    animation: float infinite ease-in-out;
+  }
+
+  .animate-twinkle {
+    animation: twinkle infinite ease-in-out;
+  }
+
+  .animate-sparkle {
+    animation: sparkle infinite ease-in-out;
+  }
+
+  .animate-float-slow {
+    animation: float-slow infinite ease-in-out;
   }
 }
